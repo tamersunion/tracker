@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Incidents - Tamers Union BitTorrent Tracker</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="panel">
+        <div class="panel-heading">
+            <h1 class="panel-title">Past Incidents</h1>
+        </div>
+        <div class="panel-content">
+            <div class="vertical-timeline">
+                <ul class="list-unstyled">
+                    <li class="title">2020</li>
+                    <li><span class="time">2020-04-11</span><span class="dot bg-success"></span>
+                        <div class="content">
+                            <h3 class="subtitle">Enable new config and restart tracker</h3>
+                            <p>In order to return peers faster, we adjusted announce interval, min announce interval before the adjustment is 15 minutes, and now the shortest min announce interval is 10 minutes. In addition, we also adjusted max peers to 200 (before the adjustment was 100). In order for these adjustments to take effect, we must restart chihaya, which will cause the service to be interrupted for approximately a few seconds. All peers and infohashes data will be lost.</p>
+                        </div>
+                    </li>
+                    <li><span class="time">2020-03-21</span><span class="dot bg-success"></span>
+                        <div class="content">
+                            <h3 class="subtitle">Change BitTorrent tracker software</h3>
+                            <p>With the increase of peers, we found that the existing tracker software (bittorrent-tracker, written in nodejs) cannot meet our requirement, often causing the CPU to run at full load or even down. Therefore, we decided to migrate the tracker to Chihaya. Chihaya is written in golang and has extremely high performance. After testing, under the same circumstances, the CPU usage is less than 1% when using Chihaya. We plan to launch a new server tonight, when there will be a disconnection of about tens of minutes, and all peers and infohashes data will be lost.</p>
+                        </div>
+                    </li>
+                    <li><span class="time">2020-03-20</span><span class="dot bg-success"></span>
+                        <div class="content">
+                            <h3 class="subtitle">Downtime accident</h3>
+                            <p>A downtime accident has been detected and has now been recovered. The reason for the investigation is that the server load is too high, resulting in downtime.</p>
+                        </div>
+                    </li>
+                    <li><span class="time">2020-03-12</span><span class="dot bg-success"></span>
+                        <div class="content">
+                            <h3 class="subtitle">Downtime accident</h3>
+                            <p>A downtime accident has been detected and has now been recovered. The reason for the investigation is that the server load is suddenly too high, resulting in downtime.</p>
+                        </div>
+                    </li>
+                    <li><span class="time">2020-03-03</span><span class="dot bg-success"></span>
+                        <div class="content">
+                            <h3 class="subtitle">Downtime accident</h3>
+                            <p>A downtime incident has been detected and has now been recovered.</p>
+                        </div>
+                    </li>
+                    <li><span class="time">2020-02-24</span><span class="dot bg-success"></span>
+                        <div class="content">
+                            <h3 class="subtitle">Enable UptimeRobot monitor</h3>
+                            <p>We have enabled UptimeRobot monitor, and now you can view the tracker's running status and downtime info in the last 60 days through the tracker home page (<a href="https://tracker.tamersunion.org">tracker.tamersunion.org</a>) or Tamers Union Server Status page (<a href="https://status.tamersunion.org">status.tamersunion.org</a>).</p>
+                        </div>
+                    </li>
+                    <li><span class="time">2020-02-16</span><span class="dot bg-success"></span>
+                        <div class="content">
+                            <h3 class="subtitle">Use CloudFlare CDN</h3>
+                            <p>In order to improve the connection speed and avoid network attacks, we now use Cloudflare CDN. This change will not have any impact on the tracker.</p>
+                        </div>
+                    </li>
+                    <li><span class="time">2020-02-09</span><span class="dot bg-success"></span>
+                        <div class="content">
+                            <h3 class="subtitle">Migrating to Digital Ocean San Francisco, US</h3>
+                            <p>Due to increased traffic, We decided to migrate from Amazon Web Services Singapore to Digital Ocean San Francisco, US. All peers and infohashes data will be lost.</p>
+                        </div>
+                    </li>
+                    <li class="title">2019</li>
+                    <li><span class="time">2019-10-27</span><span class="dot bg-success"></span>
+                        <div class="content">
+                            <h3 class="subtitle">Dedicated Tracker server has been enabled</h3>
+                            <p>In order to improve the problem of low efficiency of torrent exchange peers, We opened a dedicated tracker server. The tracker address is (<a href="https://tracker.tamersunion.org/announce">https://tracker.tamersunion.org/announce</a>). From now on, the torrents released by Tamers Union will carry the tracker server by default. At present, all the seeding nodes of Tamers Union have loaded the Tracker. If you encounter the situation that cannot be connected to any node or peer, you can manually add this for this group of seeds Tracker. Note: This Tracker supports both IPV4 and IPV6 peers.</p>
+                        </div>
+                    </li>
+                    <!--<li class="action"><a href="#" class="btn btn-info">More
+                            Timeline</a></li>-->
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
