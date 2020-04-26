@@ -1,0 +1,13 @@
+[Unit]
+Description=chihaya tracker server
+    
+[Service]
+User=root
+ExecStart=/usr/bin/chihaya --config /etc/chihaya.yaml
+Restart=on-abort
+LimitCORE=infinity
+LimitNOFILE=infinity
+LimitNPROC=infinity
+    
+[Install]
+WantedBy=multi-user.target
