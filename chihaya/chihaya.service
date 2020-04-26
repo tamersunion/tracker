@@ -3,7 +3,7 @@ Description=chihaya tracker server
     
 [Service]
 User=root
-ExecStart=/usr/bin/chihaya --config /etc/chihaya.yaml
+ExecStart=/usr/bin/chihaya --config /etc/chihaya/chihaya.yaml
 Restart=on-abort
 LimitCORE=infinity
 LimitNOFILE=infinity
