@@ -6,13 +6,15 @@
 <meta property="og:url" content="/">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="shortcut icon" href="./favicon.ico">
-<link rel="stylesheet" href="./static/css/index.css">
+<!--<link rel="stylesheet" href="./static/css/index.css">-->
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/tamersunion/tracker/static/css/index.css">
 <title>Tamers Union Public BitTorrent Tracker</title>
 </head>
 <body>
 <section class="section has-text-centered">
 <div class="container">
-<p><img class="logo" src="./static/img/logo_tamersunion.png"><br></p>
+<!--<p><img class="logo" src="./static/img/logo_tamersunion.png"><br></p>-->
+<p><img class="logo" src="//cdn.jsdelivr.net/gh/tamersunion/tracker/static/img/logo_tamersunion.png"><br></p>
 <h1 class="title is-1">
 Public BitTorrent Tracker
 </h1><br> Tracker URL<br><br>
@@ -20,7 +22,8 @@ Public BitTorrent Tracker
 <input id="tracker" type="text" value="https://tracker.tamersunion.org:443/announce">
 <span class="input-group-button">
 <button class="btn" type="button" data-clipboard="" data-clipboard-target="#tracker">
-<img class="clippy" src="./static/img/clippy.svg" alt="Copy to clipboard">
+<!--<img class="clippy" src="./static/img/clippy.svg" alt="Copy to clipboard">-->
+<img class="clippy" src="//cdn.jsdelivr.net/gh/tamersunion/tracker/static/img/clippy.svg" alt="Copy to clipboard">
 </button>
 </span>
 </div>
@@ -34,8 +37,11 @@ Public BitTorrent Tracker
 <p></p>
 </div>
 </section>
-<footer><img class="cloudflare" src="./static/img/logo-cloudflare-dark.svg"></footer>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script>
+<footer>
+<!--<img class="cloudflare" src="./static/img/logo-cloudflare-dark.svg">-->
+<img class="cloudflare" src="//cdn.jsdelivr.net/gh/tamersunion/tracker/static/img/logo-cloudflare-dark.svg">
+</footer>
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script>
 <script>
 var clipboardS=new ClipboardJS("[data-clipboard]");clipboardS.on("success",function(e){e.clearSelection();console.info("Action:",e.action);console.info("Text:",e.text);console.info("Trigger:",e.trigger);showTooltip(e.trigger,"Copied")});clipboardS.on("error",function(e){console.error("Action:",e.action);console.error("Trigger:",e.trigger);showTooltip(e.trigger,fallbackMessage(e.action))});var btns=document.querySelectorAll(".btn");var snippets=document.querySelectorAll(".snippet");[].forEach.call(snippets,function(snippet){snippet.firstChild.insertAdjacentHTML("beforebegin",'<button class="btn" data-clipboard-snippet><img class="clippy" src="assets/images/clippy.svg" alt="Copy to clipboard"></button>')});var clipboardSnippets=new ClipboardJS("[data-clipboard-snippet]",{target:function(trigger){return trigger.nextElementSibling}});clipboardSnippets.on("success",function(e){e.clearSelection();showTooltip(e.trigger,"Copied!")});clipboardSnippets.on("error",function(e){showTooltip(e.trigger,fallbackMessage(e.action))});for(var i=0;i<btns.length;i++){btns[i].addEventListener("mouseleave",clearTooltip);btns[i].addEventListener("blur",clearTooltip)}function clearTooltip(e){e.currentTarget.setAttribute("class","btn");e.currentTarget.removeAttribute("aria-label")}function showTooltip(elem,msg){elem.setAttribute("class","btn tooltipped tooltipped-s");elem.setAttribute("aria-label",msg)};
 </script>
