@@ -4,17 +4,15 @@
 <meta property="og:locale" content="en-us">
 <meta property="og:type" content="website">
 <meta property="og:url" content="/">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:creator" content="@hansenpls">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="shortcut icon" href="https://tracker.tamersunion.org/favicon.ico">
-<link rel="stylesheet" href="./index.css">
+<link rel="shortcut icon" href="./favicon.ico">
+<link rel="stylesheet" href="./static/css/index.css">
 <title>Tamers Union Public BitTorrent Tracker</title>
 </head>
 <body>
 <section class="section has-text-centered">
 <div class="container">
-<p><img class="logo" src="https://static.tamersunion.net/wp-content/uploads/logo_tamersunion_v5.png"><br></p>
+<p><img class="logo" src="./static/img/logo_tamersunion.png"><br></p>
 <h1 class="title is-1">
 Public BitTorrent Tracker
 </h1><br> Tracker URL<br><br>
@@ -22,22 +20,22 @@ Public BitTorrent Tracker
 <input id="tracker" type="text" value="https://tracker.tamersunion.org:443/announce">
 <span class="input-group-button">
 <button class="btn" type="button" data-clipboard="" data-clipboard-target="#tracker">
-<img class="clippy" src="./clippy.svg" alt="Copy to clipboard">
+<img class="clippy" src="./static/img/clippy.svg" alt="Copy to clipboard">
 </button>
 </span>
 </div>
 <br>
-<a href="https://tracker.tamersunion.org/stats" class="button is-info">Stats</a>
-<a href="https://tracker.tamersunion.org/metrics" class="button is-danger">Metrics</a>
-<a href="https://tracker.tamersunion.org/incidents" class="button is-primary">Incidents</a>
+<a href="./stats" class="button is-info">Stats</a>
+<a href="./metrics" class="button is-danger">Metrics</a>
+<a href="./incidents" class="button is-primary">Incidents</a>
 <a href="https://docs.tamersunion.org/agreements/tracker" class="button is-success">About</a>
 <br><br>
 <iframe id="status" src="./status/index.html" scrolling="no" frameborder="0" style="width: 100%;"></iframe>
 <p></p>
 </div>
 </section>
-<footer><img class="cloudflare" src="https://www.cloudflare.com/img/logo-cloudflare-dark.svg"></footer>
-<script type="text/javascript" src="https://st-aliyun-4.hanada.info/clipboard.js/2.0.4/clipboard.min.js"></script>
+<footer><img class="cloudflare" src="./static/img/logo-cloudflare-dark.svg"></footer>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script>
 <script>
 var clipboardS=new ClipboardJS("[data-clipboard]");clipboardS.on("success",function(e){e.clearSelection();console.info("Action:",e.action);console.info("Text:",e.text);console.info("Trigger:",e.trigger);showTooltip(e.trigger,"Copied")});clipboardS.on("error",function(e){console.error("Action:",e.action);console.error("Trigger:",e.trigger);showTooltip(e.trigger,fallbackMessage(e.action))});var btns=document.querySelectorAll(".btn");var snippets=document.querySelectorAll(".snippet");[].forEach.call(snippets,function(snippet){snippet.firstChild.insertAdjacentHTML("beforebegin",'<button class="btn" data-clipboard-snippet><img class="clippy" src="assets/images/clippy.svg" alt="Copy to clipboard"></button>')});var clipboardSnippets=new ClipboardJS("[data-clipboard-snippet]",{target:function(trigger){return trigger.nextElementSibling}});clipboardSnippets.on("success",function(e){e.clearSelection();showTooltip(e.trigger,"Copied!")});clipboardSnippets.on("error",function(e){showTooltip(e.trigger,fallbackMessage(e.action))});for(var i=0;i<btns.length;i++){btns[i].addEventListener("mouseleave",clearTooltip);btns[i].addEventListener("blur",clearTooltip)}function clearTooltip(e){e.currentTarget.setAttribute("class","btn");e.currentTarget.removeAttribute("aria-label")}function showTooltip(elem,msg){elem.setAttribute("class","btn tooltipped tooltipped-s");elem.setAttribute("aria-label",msg)};
 </script>
