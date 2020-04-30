@@ -39,6 +39,19 @@ Use "chihaya [command] --help" for more information about a command.
 $ sudo systemctl enable chiahya
 $ sudo systemctl start chihaya
 ```
+This configuration file is different from the default config. If you need default config. The url is here
+
+```
+$ sudo wget https://raw.githubusercontent.com/chihaya/chihaya/master/dist/example_config.yaml -O /etc/chihaya/chihaya.yaml
+
+```
+
+If you want to use Cloudflare CDN. You should eidt the config file.
+```
+# The HTTP Header containing the IP address of the client.
+# This is only necessary if using a reverse proxy.
+real_ip_header: "CF-Connecting-IP"
+```
 
 ### Prometheus
 1. [Install Prometheus](https://prometheus.io/docs/prometheus/latest/getting_started/)
