@@ -179,18 +179,27 @@ Requests(Peer minute) example
 ![torrent_example](./static/img/grafana_requests_example.png)
 
 6. Click share button and get Embed Link (Cancel the Current time range option).
+
 ![grafana_share](./static/img/grafana_share.png)
 
-### Nginx config
+### Nginx
+#### Nginx config
 ```
 server {
+    # http prot
     listen *:80;
     listen [::]:80;
+
+    # https prot
     listen *:443 ssl http2;
     listen [::]:443 ssl http2;
+
+    # ssl certificate
     ssl_certificate ssl_fullchain_path;
     ssl_certificate_key ssl_key_path;
     ssl_trusted_certificate ssl_ocsp_bundle_path;
+
+    # domain
     server_name tracker_domain;
 
     client_header_buffer_size 8k;
@@ -211,10 +220,10 @@ server {
     #add_header X-Content-Type-Options "nosniff";
     #add_header X-Frame-Options "SAMEORIGIN";
 
-    access_log /var/log/nginx/tracker_tamersunion.access.log;
-    error_log /var/log/nginx/tracker_tamersunion.error.log;
+    access_log /var/log/nginx/tracker.access.log;
+    error_log /var/log/nginx/tracker.error.log;
 
-    root /srv/tracker;
+    root /www/tracker;
     index index.html index.htm index.php;
 
     # Redirect wrong uri
@@ -254,7 +263,7 @@ server {
         proxy_set_header Host $host;
         add_header X-Cache $upstream_cache_status;
         add_header Cache-Control no-cache;
-	    proxy_hide_header X-Frame-Options;
+        proxy_hide_header X-Frame-Options;
     }
 
     # Pormetheus server proxy
