@@ -1,21 +1,22 @@
 <!DOCTYPE html>
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
 <meta property="og:locale" content="en-us">
 <meta property="og:type" content="website">
 <meta property="og:url" content="/">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="shortcut icon" href="./favicon.ico">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/bulma@0.8.2/css/bulma.min.css">
 <!--<link rel="stylesheet" href="./static/css/index.css">-->
 <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/tamersunion/tracker/static/css/index.css">
-<title>Tamers Union Public BitTorrent Tracker</title>
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+<title>Tamers Union BitTorrent Tracker</title>
 </head>
 <body>
 <section class="section has-text-centered">
 <div class="container">
 <!--<p><img class="logo" src="./static/img/logo_tamersunion.png"><br></p>-->
 <p><img class="logo" src="//cdn.jsdelivr.net/gh/tamersunion/tracker/static/img/logo_tamersunion.png"><br></p>
-<h1 class="title is-1">
+<h1 class="title is-3">
 Public BitTorrent Tracker
 </h1><br> Tracker URL<br><br>
 <div class="input-group">
@@ -33,16 +34,32 @@ Public BitTorrent Tracker
 <a href="./incidents" class="button is-primary">Incidents</a>
 <a href="https://docs.tamersunion.org/agreements/tracker" class="button is-success">About</a>
 <br><br>
+<table style="margin:auto" class="table is-bordered">
+    <thead>
+      <tr>
+        <th>Seeders</th>
+        <th>Leechers</th>
+        <th>Peers</th>
+        <th>Torrents</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td id="seeders">Loading</td>
+        <td id="leechers">Loading</td>
+        <td id="peers">Loading</td>
+        <td id="torrents">Loading</td>
+      </tr>
+    </tbody>
+</table>
+<br>
 <iframe id="status" src="./status/index.html" scrolling="no" frameborder="0" style="width: 100%;"></iframe>
 <p></p>
 </div>
 </section>
-<footer>
-<!--<img class="cloudflare" src="./static/img/logo-cloudflare-dark.svg">-->
-<img class="cloudflare" src="//cdn.jsdelivr.net/gh/tamersunion/tracker/static/img/logo-cloudflare-dark.svg">
-</footer>
 <script type="text/javascript" src="//cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script>
 <script>
 var clipboardS=new ClipboardJS("[data-clipboard]");clipboardS.on("success",function(e){e.clearSelection();console.info("Action:",e.action);console.info("Text:",e.text);console.info("Trigger:",e.trigger);showTooltip(e.trigger,"Copied")});clipboardS.on("error",function(e){console.error("Action:",e.action);console.error("Trigger:",e.trigger);showTooltip(e.trigger,fallbackMessage(e.action))});var btns=document.querySelectorAll(".btn");var snippets=document.querySelectorAll(".snippet");[].forEach.call(snippets,function(snippet){snippet.firstChild.insertAdjacentHTML("beforebegin",'<button class="btn" data-clipboard-snippet><img class="clippy" src="assets/images/clippy.svg" alt="Copy to clipboard"></button>')});var clipboardSnippets=new ClipboardJS("[data-clipboard-snippet]",{target:function(trigger){return trigger.nextElementSibling}});clipboardSnippets.on("success",function(e){e.clearSelection();showTooltip(e.trigger,"Copied!")});clipboardSnippets.on("error",function(e){showTooltip(e.trigger,fallbackMessage(e.action))});for(var i=0;i<btns.length;i++){btns[i].addEventListener("mouseleave",clearTooltip);btns[i].addEventListener("blur",clearTooltip)}function clearTooltip(e){e.currentTarget.setAttribute("class","btn");e.currentTarget.removeAttribute("aria-label")}function showTooltip(elem,msg){elem.setAttribute("class","btn tooltipped tooltipped-s");elem.setAttribute("aria-label",msg)};
+$.ajax({url:"./prometheus/api/v1/query?query=chihaya_storage_seeders_count",success:function(result){$("#seeders").text(result.data.result[0].value[1])}});$.ajax({url:"./prometheus/api/v1/query?query=chihaya_storage_leechers_count",success:function(result){$("#leechers").text(result.data.result[0].value[1])}});$.ajax({url:"./prometheus/api/v1/query?query=chihaya_storage_seeders_count%2Bchihaya_storage_leechers_count",success:function(result){$("#peers").text(result.data.result[0].value[1])}});$.ajax({url:"./prometheus/api/v1/query?query=chihaya_storage_infohashes_count",success:function(result){$("#torrents").text(result.data.result[0].value[1])}});
 </script>
 </body></html>
