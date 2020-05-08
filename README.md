@@ -1,5 +1,5 @@
 ## Tamers Union Bittorrent Tracker
-This tracker use [Chiahya](https://github.com/chihaya/chihaya) Project, the Binary file is builded at April, 2020.
+This tracker use [Chihaya](https://github.com/chihaya/chihaya) Project, the Binary file is builded at April, 2020.
 
 ### Chihaya
 /chihaya includes Chihaya binary file, Chihaya config file and systemd file.
@@ -36,7 +36,7 @@ Flags:
 
 Use "chihaya [command] --help" for more information about a command.
 
-$ sudo systemctl enable chiahya
+$ sudo systemctl enable chihaya
 $ sudo systemctl start chihaya
 ```
 This configuration file is different from the default config. If you need default config. The url is here
