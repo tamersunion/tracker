@@ -1,7 +1,7 @@
 chihaya:
   # The interval communicated with BitTorrent clients informing them how
   # frequently they should announce in between client events.
-  announce_interval: 10m
+  announce_interval: 15m
 
   # The interval communicated with BitTorrent clients informing them of the
   # minimal duration between announces.
