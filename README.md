@@ -8,8 +8,8 @@ You can use a soft link to connect to the specified directory, or move file dire
 
 Example
 ```
-$ sudo chmod +x /www/tracker/chiahya/chihaya
-$ sudo ln -s /www/tracker/chiahya/chihaya /usr/bin/chihaya
+$ sudo chmod +x /www/tracker/chihaya/chihaya
+$ sudo ln -s /www/tracker/chihaya/chihaya /usr/bin/chihaya
 $ sudo mkdir /etc/chihaya
 $ sudo ln -s /www/tracker/chihaya/chihaya.yaml /etc/chihaya/chihaya.yaml
 $ sudo ln -s /www/tracker/chihaya/chihaya.service /lib/systemd/system/chihaya.service
