@@ -61,7 +61,7 @@ real_ip_header: "CF-Connecting-IP"
 
 Example
 ```
-$ sudo vim /usr/local/prometheus.yml
+$ sudo vim /usr/local/prometheus/prometheus.yml
 
 # my global config
 global:
@@ -148,7 +148,7 @@ domain = tracker_domain
 
 # The full public facing url you use in browser, used for redirects and emails
 # If you use reverse proxy and sub path specify full url (with sub path)
-root_url = %(protocol)s://%(domain)s/grafana
+root_url = %(protocol)s://%(domain)s:%(http_port)s/grafana
 
 [auth.anonymous]
 # enable anonymous access
