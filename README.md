@@ -242,7 +242,7 @@ server {
     # Redirect wrong uri
     location / {
         if ($args ~ info_hash) {
-            rewrite ^ https://$host/announce?$args permanent;
+            rewrite ^ https://$host/announce permanent;
         }
     }
 
