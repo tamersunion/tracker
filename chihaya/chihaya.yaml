@@ -5,7 +5,7 @@ chihaya:
 
   # The interval communicated with BitTorrent clients informing them of the
   # minimal duration between announces.
-  min_announce_interval: 5m
+  min_announce_interval: 10m
 
   # The network interface that will bind to an HTTP endpoint that can be
   # scraped by an instance of the Prometheus time series database.
@@ -17,7 +17,7 @@ chihaya:
   http:
     # The network interface that will bind to an HTTP server for serving
     # BitTorrent traffic. Remove this to disable the non-TLS listener.
-    addr: "127.0.0.1:6969"
+    addr: "0.0.0.0:80"
 
     # The network interface that will bind to an HTTPS server for serving
     # BitTorrent traffic. If set, tls_cert_path and tls_key_path are required.
@@ -117,11 +117,11 @@ chihaya:
       # This balances between
       # - collecting garbage more often, potentially using more CPU time, but potentially using less memory (lower value)
       # - collecting garbage less frequently, saving CPU time, but keeping old peers long, thus using more memory (higher value).
-      gc_interval: 3m
+      gc_interval: 5m
 
       # The amount of time until a peer is considered stale.
       # To avoid churn, keep this slightly larger than `announce_interval`
-      peer_lifetime: 41m
+      peer_lifetime: 31m
 
       # The number of partitions data will be divided into in order to provide a
       # higher degree of parallelism.
