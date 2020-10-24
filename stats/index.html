@@ -1,35 +1,33 @@
 <!DOCTYPE html>
 <html><head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta property="og:locale" content="en-us">
-<meta property="og:type" content="website">
-<meta property="og:url" content="/stats">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="shortcut icon" href="../favicon.ico">
-<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/bulma@0.8.2/css/bulma.min.css">
-<title>Stats - Tamers Union BitTorrent Tracker</title>
-<style>#pc{display:block}#mobile{display:none;padding-top:80px;}@media screen and (max-width:720px){#pc{display:none}#mobile{display:block}}</style>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/bulma@0.8.2/css/bulma.min.css">
+    <title>Stats - Tamers Union BitTorrent Tracker</title>
+    <style>#pc{display:block}#mobile{display:none;padding-top:80px;}@media screen and (max-width:720px){#pc{display:none}#mobile{display:block}}</style>
 </head>
 <body>
-<section class="section has-text-centered" style="padding:1rem 1.5rem">
-<div id="pc" class="container">
-<iframe id="peers" scrolling="no" src="../grafana/d-solo/ZljF8SIMz/chihaya?orgId=1&panelId=2" width="100%" frameborder="0"></iframe>
-<iframe id="torrents" scrolling="no" src="../grafana/d-solo/ZljF8SIMz/chihaya?orgId=1&panelId=4" width="100%" frameborder="0"></iframe>
-<iframe id="requests" scrolling="no" src="../grafana/d-solo/ZljF8SIMz/chihaya?orgId=1&panelId=6" width="100%" frameborder="0"></iframe>
-<script type="text/javascript">
-document.getElementById("peers").style.height=document.getElementById("peers").scrollWidth*0.5+"px";
-document.getElementById("torrents").style.height=document.getElementById("torrents").scrollWidth*0.5+"px";
-document.getElementById("requests").style.height=document.getElementById("requests").scrollWidth*0.5+"px";
-</script>
-<br>
-<a href="../" class="button is-info">Back to Index</a>
-</div>
-<div id="mobile" class="container">
-    <a target="_blank" href="../grafana/d-solo/ZljF8SIMz/chihaya?orgId=1&panelId=2" class="button is-success">Peers</a>
-    <a target="_blank" href="../grafana/d-solo/ZljF8SIMz/chihaya?orgId=1&panelId=4" class="button is-primary">Torrents</a>
-    <a target="_blank" href="../grafana/d-solo/ZljF8SIMz/chihaya?orgId=1&panelId=6" class="button is-danger">Requests</a>
-    <br><br>
-    <a href="../" class="button is-info">Back to Index</a>
-</div>
-</section>
+    <section class="section has-text-centered" style="padding:1rem 1.5rem">
+        <div id="pc" class="container">
+            <iframe id="peers" scrolling="no" src="../grafana/d-solo/ZljF8SIMz/chihaya?orgId=1&panelId=2" width="100%" frameborder="0"></iframe>
+            <iframe id="torrents" scrolling="no" src="../grafana/d-solo/ZljF8SIMz/chihaya?orgId=1&panelId=4" width="100%" frameborder="0"></iframe>
+            <iframe id="requests" scrolling="no" src="../grafana/d-solo/ZljF8SIMz/chihaya?orgId=1&panelId=6" width="100%" frameborder="0"></iframe>
+            <script type="text/javascript">
+            document.getElementById("peers").style.height=document.getElementById("peers").scrollWidth*0.5+"px";
+            document.getElementById("torrents").style.height=document.getElementById("torrents").scrollWidth*0.5+"px";
+            document.getElementById("requests").style.height=document.getElementById("requests").scrollWidth*0.5+"px";
+            </script>
+            <br>
+            <a href="../" class="button is-info">Back to Index</a>
+        </div>
+        <div id="mobile" class="container">
+            <a target="_blank" href="../grafana/d-solo/ZljF8SIMz/chihaya?orgId=1&panelId=2" class="button is-success">Peers</a>
+            <a target="_blank" href="../grafana/d-solo/ZljF8SIMz/chihaya?orgId=1&panelId=4" class="button is-primary">Torrents</a>
+            <a target="_blank" href="../grafana/d-solo/ZljF8SIMz/chihaya?orgId=1&panelId=6" class="button is-danger">Requests</a>
+            <br><br>
+            <a href="../" class="button is-info">Back to Index</a>
+        </div>
+    </section>
 </body></html>

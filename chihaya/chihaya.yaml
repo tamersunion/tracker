@@ -121,7 +121,7 @@ chihaya:
 
       # The amount of time until a peer is considered stale.
       # To avoid churn, keep this slightly larger than `announce_interval`
-      peer_lifetime: 31m
+      peer_lifetime: 33m
 
       # The number of partitions data will be divided into in order to provide a
       # higher degree of parallelism.
