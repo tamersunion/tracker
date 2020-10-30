@@ -1,8 +1,8 @@
 window.Config = {
 
-  SiteName: 'Tamers Union BitTracker Status',
+  SiteName: 'Tamers Union BitTorrent Tracker',
 
-  SiteUrl: '/status',
+  SiteUrl: '/',
 
   ApiKeys: [
     'm784383896-4e64bbd21f553201a22f7377',
