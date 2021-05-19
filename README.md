@@ -1,10 +1,10 @@
 ## Tamers Union Bittorrent Tracker
-This tracker use [Chihaya](https://github.com/chihaya/chihaya) Project, the Binary file is builded at April, 2020.
+This tracker use [Chihaya](https://github.com/chihaya/chihaya) Project, the binary file is built at April, 2020.
 
 ### Chihaya
 /chihaya includes Chihaya binary file, Chihaya config file and systemd file.
 
-You can use a soft link to connect to the specified directory, or move file directly
+You can use a soft link to connect to the specified directory, or move file directly.
 
 Example
 ```
@@ -39,7 +39,7 @@ Use "chihaya [command] --help" for more information about a command.
 $ sudo systemctl enable chihaya
 $ sudo systemctl start chihaya
 ```
-This configuration file is different from the default config. If you need default config. The url is here
+This config file is different from the default config. If you need default config. The url is here
 
 ```
 $ sudo wget https://raw.githubusercontent.com/chihaya/chihaya/master/dist/example_config.yaml -O /etc/chihaya/chihaya.yaml
@@ -133,7 +133,7 @@ $ sudo systemctl status prometheus
 ```
 
 ### Grafana
-/stats is a html page with grafana stats iframe. (Grafana is reverse proxyed nginx)
+/stats is a html page with grafana stats iframe. (Grafana is reverse proxy by nginx)
 
 #### Install Grafana
 1. [Download Grafana](https://grafana.com/grafana/download) and install it.
